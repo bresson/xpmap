@@ -87,10 +87,10 @@
 
       let currentZoom = map.getZoom();
 
-      L.imageOverlay("expo_map.svg", [
-        [24.95576538, 55.145221],
-        [24.96804799, 55.15724009]
-      ]).addTo(map);
+      L.imageOverlay(
+        "https://previews.dropbox.com/p/orig/AAnSa94LKP_h5XJ9c20Lw4imj47sHIP3NOAYJTYsIB3IiASyfO7m8maQKwOb731HR6EiBptF6oRsutw8LcP-OBWU_rRq0GodTrIM2IBHTYDfnbvUitV8LO5hSWg3jsS1-UaTRs1WSUuyDihewKtHdj9CCqITxFf5gI28DnrI07JpE39NJ-UfP2_dIQlMFzjQ5G6STb5Q2uXLPmWX0ujQLI_Xy0YcKucqpZJskgYIIYtKVBxDTilIAu-qzXsaqb621BO0SCDH-wOaMHNhAKfD8O3NGKQtyNcZg9vsaSg56rGPw973qK80Grcmnj0P2uhvweA/p.svg?fv_content=true&size_mode=5",
+        [[24.95576538, 55.145221], [24.96804799, 55.15724009]]
+      ).addTo(map);
       //   layer = L.tileLayer("overlays.buildings.svg", options).addTo(map);
       map.on("click", e => {
         console.log(e.latlng);
@@ -101,7 +101,6 @@
       });
 
       map.on("zoom", e => {
-        debugger;
         const z = map.getZoom();
         if (z >= 18) {
           if (map.hasLayer(base)) {
